@@ -1,219 +1,201 @@
-# Enterprise Active Directory Security Lab
+# Active Directory Domain Controller Lab
 
 ## Project Overview
 
-This project demonstrates the design, deployment, configuration, and security assessment of a simulated enterprise Windows network environment.
+This project demonstrates the deployment and configuration of a Windows Server–based Active Directory Domain Controller inside a virtualized lab environment. The goal is to replicate real‑world system administration tasks including domain creation, identity management, DNS configuration, workstation onboarding, and foundational enterprise IT operations.
 
-The goal of this lab is to replicate common IT infrastructure and cybersecurity responsibilities found in enterprise environments, including identity management, system administration, security hardening, vulnerability assessment, and security documentation.
+This lab simulates a small business network using:
 
-The environment simulates a small organization using Windows Server, Active Directory, Windows workstations, and security testing tools.
+- Windows Server 2022 (Domain Controller)
+- Windows 11 (Domain‑joined workstation)
+- VirtualBox virtualization platform
 
----
-
-# Project Objectives
-
-* Deploy an enterprise-style Windows domain environment
-* Configure Active Directory and identity management
-* Implement security policies using Group Policy
-* Manage users, groups, and permissions
-* Perform vulnerability assessments
-* Identify and document security risks
-* Apply security hardening techniques
-* Practice cybersecurity documentation and reporting
+The project includes full documentation, screenshots, diagrams, and a structured walkthrough of each configuration step.
 
 ---
 
-# Lab Environment
+## Project Objectives
 
-## Network Architecture
+- Build a functional Windows Server 2022 domain controller  
+- Configure Active Directory Domain Services (AD DS)  
+- Set up DNS for domain operations  
+- Create Organizational Units (OUs), users, and security groups  
+- Deploy and configure a Windows 11 domain workstation  
+- Demonstrate core identity and access management concepts  
+- Document each step with screenshots and technical explanations  
+- Organize the project using a professional GitHub structure  
 
-**Domain:**
+---
 
-```
+## Lab Environment
+
+### Domain
+
 griffith.local
-```
 
-## Systems
+### Systems
 
 | System              | Purpose                                       |
 | ------------------- | --------------------------------------------- |
-| Windows Server 2022 | Domain Controller, Active Directory, DNS      |
+| Windows Server 2022 | Domain Controller, AD DS, DNS                 |
 | Windows 11          | Domain workstation/client                     |
-| Kali Linux          | Security testing and vulnerability assessment |
 
 ---
 
-# Technologies Used
+## Technologies Used
 
-## Operating Systems
+### Operating Systems
+- Windows Server 2022  
+- Windows 11  
 
-* Windows Server 2022
-* Windows 11
-* Kali Linux
+### Identity & Access Management
+- Active Directory Domain Services  
+- Organizational Units  
+- Security Groups  
+- User Accounts  
+- Group Policy Objects (GPO)
 
-## Identity & Access Management
-
-* Active Directory Domain Services (AD DS)
-* Organizational Units (OU)
-* Security Groups
-* User Management
-* Group Policy Objects (GPO)
-
-## Security Tools
-
-* Nmap
-* Nessus Essentials
-* Windows Event Viewer
-* Sysmon
-
-## Administration & Development
-
-* PowerShell
-* Linux Command Line
-* Git
-* GitHub
-* Virtualization
+### Administration Tools
+- Server Manager  
+- Active Directory Users and Computers  
+- DNS Manager  
+- PowerShell  
+- VirtualBox  
 
 ---
 
-# Skills Demonstrated
+## Skills Demonstrated
 
-## System Administration
+### System Administration
+- Windows Server deployment  
+- Domain controller configuration  
+- DNS setup and verification  
+- User and group management  
+- Organizational Unit design  
+- Workstation domain join  
 
-* Windows Server deployment
-* Active Directory administration
-* Domain controller configuration
-* DNS configuration
-* User and group management
-* Permission management
-* Group Policy administration
+### Networking
+- Static IP configuration  
+- DNS resolution  
+- Host‑only and NAT networking  
+- Client/server communication  
 
-## Cybersecurity
-
-* Identity and Access Management (IAM)
-* Security hardening
-* Vulnerability management
-* Network reconnaissance
-* Risk identification
-* Security monitoring
-* Incident response fundamentals
-
-## Networking
-
-* IP addressing
-* Network segmentation concepts
-* Client/server communication
-* Port scanning
-* Service enumeration
-
-## Documentation
-
-* Technical documentation
-* Security assessment reporting
-* Configuration documentation
-* Project organization using GitHub
+### Documentation
+- Technical documentation  
+- Screenshot‑based walkthroughs  
+- Project organization using GitHub  
 
 ---
 
-# Security Activities Performed
+## Project Walkthrough
 
-## Active Directory Configuration
+This project is organized into clear phases:
 
-Implemented:
+### Phase 1 — Environment Setup
+- Install VirtualBox  
+- Create project folders  
+- Prepare Windows Server ISO  
+- Build the DC01 virtual machine  
 
-* Domain creation
-* Organizational Units
-* User accounts
-* Security groups
-* Access control concepts
+### Phase 2 — Domain Controller Configuration
+- Install Windows Server  
+- Rename server  
+- Configure static IP  
+- Install AD DS  
+- Promote server to Domain Controller  
+- Verify domain creation  
 
----
+### Phase 3 — Active Directory Structure
+- Create Organizational Units  
+- Create Security Groups  
+- Create User Accounts  
 
-## Security Hardening
+### Phase 4 — Windows 11 Client
+- Build Windows 11 VM  
+- Configure networking  
+- Join workstation to the domain  
 
-Configured:
-
-* Password policies
-* Account lockout policies
-* Windows security settings
-* User access controls
-* Security auditing
-
----
-
-## Vulnerability Assessment
-
-Performed:
-
-* Network discovery using Nmap
-* Service enumeration
-* Vulnerability scanning
-* Security findings documentation
-
-Findings were reviewed and recommendations were created based on risk.
+### Phase 5 — Final Verification
+- Confirm domain membership  
+- Validate user login  
+- Review AD structure  
 
 ---
 
-# Project Documentation
+## Screenshot Gallery
 
-Documentation included:
+### 🧱 Lab Setup
+![Lab Setup](screenshots/01-Lab-Setup/01-Operating-System-ISOs.png)
+![VirtualBox Installed](screenshots/01-Lab-Setup/02-VirtualBox-Installed.png)
+![VirtualBox Storage](screenshots/01-Lab-Setup/03-VirtualBox-Storage-Location.png)
+![Project Folders](screenshots/01-Lab-Setup/04-Project-Folders.png)
+![Create DC01 VM](screenshots/01-Lab-Setup/05-Create-DC01-VM.png)
+![DC01 Hardware Settings 1](screenshots/01-Lab-Setup/06-DC01-Hardware-Settings-1.png)
+![DC01 Hardware Settings 2](screenshots/01-Lab-Setup/07-DC01-Hardware-Settings-2.png)
+![DC01 Virtual Disk](screenshots/01-Lab-Setup/08-DC01-Virtual-Disk.png)
 
-* Environment setup guide
-* Active Directory configuration
-* Security hardening procedures
-* Vulnerability assessment report
-* Network architecture diagram
-* Screenshots and testing evidence
+### 🏰 Active Directory
+![Windows Server Installing](screenshots/02-Active-Directory/01-Windows-Server-Installing.png)
+![DC01 Desktop](screenshots/02-Active-Directory/02-DC01-Desktop.png)
+![DC01 Renamed](screenshots/02-Active-Directory/03-DC01-Renamed.png)
+![ADDS Role Installed](screenshots/02-Active-Directory/04-ADDS-Role-Installed.png)
+![Domain Controller Created](screenshots/02-Active-Directory/05-Domain-Controller-Created.png)
+![Active Directory Domain](screenshots/02-Active-Directory/06-Active-Directory-Domain.png)
 
----
+### 🌐 Network Configuration
+![Network Adapters](screenshots/03-Network-Configuration/01-DC01-Network-Adapters.png)
+![Static IP](screenshots/03-Network-Configuration/02-DC01-Static-IP.png)
+![Static IP 2](screenshots/03-Network-Configuration/03-DC01-Static-IP-2.png)
+![WIN11 Network Settings](screenshots/03-Network-Configuration/04-WIN11-Network-Settings.png)
 
-# Skills Learned
+### 💻 Windows Client
+![Windows 11 VM Creation](screenshots/04-Windows-Client/01-Windows11-VM-Creation.png)
+![WIN11 Hardware Settings](screenshots/04-Windows-Client/02-WIN11-Hardware-Settings.png)
+![WIN11 Desktop](screenshots/04-Windows-Client/03-WIN11-Desktop.png)
 
-Through this project, I gained practical experience with:
-
-* Building and managing a Windows enterprise environment
-* Understanding how organizations manage user access
-* Applying cybersecurity controls
-* Performing basic security assessments
-* Troubleshooting infrastructure issues
-* Communicating technical findings through documentation
-
----
-
-# Future Improvements
-
-Planned enhancements:
-
-* Add centralized logging with Wazuh or Splunk
-* Add PowerShell automation scripts
-* Perform simulated attack scenarios
-* Create detection rules and alerts
-* Expand vulnerability management reporting
-* Add cloud security components using AWS or Azure
-
----
-
-# Project Status
-
-🚧 In Progress
-
-Current Version:
-
-```
-v1.0
-```
+### 🧩 Final
+![Organizational Units](screenshots/05-Final/01-Organizational-Units.png)
+![Security Groups](screenshots/05-Final/02-Security-Groups.png)
+![User Accounts](screenshots/05-Final/03-User-Accounts.png)
 
 ---
 
-# Author
+## Project Documentation
 
-Brandon Griffith
+This repository includes:
 
-Cybersecurity Student | IT Professional
+- Environment Setup Guide  
+- Active Directory Configuration Guide  
+- Networking Guide  
+- Windows Client Guide  
+- Diagrams  
+- Screenshots and evidence  
 
-Focus Areas:
+All documentation is located in the `docs/` folder.
 
-* Cybersecurity Operations
-* System Administration
-* Security Engineering
-* Cloud Security
+---
+
+## Future Improvements
+
+- Add Group Policy configuration  
+- Add login scripts  
+- Add roaming profiles  
+- Add DHCP server  
+- Add additional Windows clients  
+- Add monitoring/logging tools  
+
+---
+
+## Project Status
+
+✔️ Completed Core Deployment  
+🚧 Additional Enhancements Planned  
+
+---
+
+## Author
+
+**Brandon Griffith**  
+Cybersecurity Student | IT Professional  
+Focus Areas: System Administration, Cybersecurity, Identity Management
+
